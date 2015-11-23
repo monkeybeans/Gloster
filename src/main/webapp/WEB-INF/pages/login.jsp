@@ -8,5 +8,21 @@
 </head>
 <body>
 
+<form action="start/" method="post" class="user-login">
+	<div>
+		<label for="user-name">User Name</label>
+		<input type="text" id="user-name" name="username"></input>
+	</div>
+	
+	<div>
+		<label for="user-password">Password</label>
+		<input type="password" id="user-password" name="password"></input>
+	</div>
+	
+	<div>
+		<input type="submit" value="Continue"/>
+	</div>
+</form>
+
 </body>
 </html>

@@ -6,9 +6,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.gloster.data.Login;;
+import com.gloster.data.Login;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
@@ -30,5 +32,15 @@ public class LoginController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/start", method = RequestMethod.POST)
+	public String start(ModelMap model,
+			@RequestParam(value="username", required=true) String username,
+			@RequestParam(value="password", required=true) String password
+			){
+		
+		model.addAttribute("username", username);
+		
+		return "start";
+	}
 
 }

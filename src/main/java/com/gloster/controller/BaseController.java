@@ -27,7 +27,9 @@ public class BaseController {
 	}
 
 	@RequestMapping(value = "/base/{name}", method = RequestMethod.GET)
-	public String welcomeName(@PathVariable String name, ModelMap model) {
+	public String welcomeName(
+			@PathVariable String name, ModelMap model
+			) {
 
 		model.addAttribute("message", "Welcome " + name);
 		model.addAttribute("counter", ++counter);
